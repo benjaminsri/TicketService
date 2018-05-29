@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import benjamin.skyict.co.th.ticketservice.fragment.BaseTicketFragment;
 import benjamin.skyict.co.th.ticketservice.utility.ListViewAdapter;
 import benjamin.skyict.co.th.ticketservice.utility.MyConstance;
 
@@ -41,6 +42,14 @@ public class ServiceActivity extends AppCompatActivity {
 //        Create ListView
         createListView();
 
+//        Add Fragment
+        if (savedInstanceState == null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.contentServiceFragment,
+                            BaseTicketFragment.baseTicketInstance(idString, nameUserString))
+                    .commit();
+        }
 
     }   // Main Method
 

@@ -20,7 +20,7 @@
 
         <!--Contect of Fragment-->
         <FrameLayout
-            android:id="@+id/contectServiceFragment"
+            android:id="@+id/contentServiceFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
