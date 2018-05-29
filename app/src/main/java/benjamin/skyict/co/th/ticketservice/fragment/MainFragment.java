@@ -1,5 +1,6 @@
 package benjamin.skyict.co.th.ticketservice.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,6 +22,7 @@ import org.json.JSONObject;
 
 import benjamin.skyict.co.th.ticketservice.MainActivity;
 import benjamin.skyict.co.th.ticketservice.R;
+import benjamin.skyict.co.th.ticketservice.ServiceActivity;
 import benjamin.skyict.co.th.ticketservice.utility.MyAlertDialog;
 import benjamin.skyict.co.th.ticketservice.utility.ReadAllData;
 
@@ -62,7 +64,7 @@ public class MainFragment extends Fragment{
                     try {
 
                         boolean userBool = true;
-                        String truePasswordString = null, nameString = null, idString;
+                        String truePasswordString = null, nameString = null, idString = null;
                         String urlJSON = "http://androidthai.in.th/gate/getAllUserArm.php";
                         ReadAllData readAllData = new ReadAllData(getActivity());
                         readAllData.execute(urlJSON);
@@ -95,6 +97,11 @@ public class MainFragment extends Fragment{
                         } else if (passwordSring.equals(truePasswordString)) {
                             Toast.makeText(getActivity(), "Welcome" + nameString,
                                     Toast.LENGTH_SHORT).show();
+
+//                            Intent to ServiceActicity
+                            intentToService(nameString, idString);
+
+
                         } else {
                             myAlertDialog.normalDialog("Password False",
                                     "Please Try Again Password False");
@@ -111,6 +118,14 @@ public class MainFragment extends Fragment{
 
             }   // onClick
         });
+    }
+
+    private void intentToService(String nameString, String idString) {
+        Intent intent = new Intent(getActivity(), ServiceActivity.class);
+        intent.putExtra("id", idString);
+        intent.putExtra("Name", nameString);
+        startActivity(intent);
+        getActivity().finish();
     }
 
     @Override
