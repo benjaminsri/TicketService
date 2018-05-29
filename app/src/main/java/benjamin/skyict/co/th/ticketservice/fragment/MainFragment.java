@@ -27,6 +27,7 @@ import benjamin.skyict.co.th.ticketservice.MainActivity;
 import benjamin.skyict.co.th.ticketservice.R;
 import benjamin.skyict.co.th.ticketservice.ServiceActivity;
 import benjamin.skyict.co.th.ticketservice.utility.MyAlertDialog;
+import benjamin.skyict.co.th.ticketservice.utility.MyConstance;
 import benjamin.skyict.co.th.ticketservice.utility.ReadAllData;
 
 public class MainFragment extends Fragment{
@@ -86,9 +87,12 @@ public class MainFragment extends Fragment{
 //                    No Space
                     try {
 
+                        MyConstance myConstance = new MyConstance();
                         boolean userBool = true;
                         String truePasswordString = null, nameString = null, idString = null;
-                        String urlJSON = "http://androidthai.in.th/gate/getAllUserArm.php";
+
+                        String urlJSON = myConstance.getUrlGetAllUser();
+
                         ReadAllData readAllData = new ReadAllData(getActivity());
                         readAllData.execute(urlJSON);
                         MyAlertDialog myAlertDialog = new MyAlertDialog(getActivity());
