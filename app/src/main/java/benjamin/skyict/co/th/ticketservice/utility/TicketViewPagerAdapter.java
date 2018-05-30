@@ -4,7 +4,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-public class TicketViewPagerAdapter extends FragmentStatePagerAdapter{
+import benjamin.skyict.co.th.ticketservice.fragment.ActiveFragment;
+import benjamin.skyict.co.th.ticketservice.fragment.CriticalFragment;
+import benjamin.skyict.co.th.ticketservice.fragment.LastFragment;
+import benjamin.skyict.co.th.ticketservice.fragment.NewItemFragment;
+
+public class TicketViewPagerAdapter extends FragmentStatePagerAdapter {
 
     private FragmentManager fragmentManager;
     private int tabLayoutAnInt;
@@ -21,10 +26,22 @@ public class TicketViewPagerAdapter extends FragmentStatePagerAdapter{
 
         switch (position) {
             case 0:
-                break;
+                NewItemFragment newItemFragment = new NewItemFragment();
+                return newItemFragment;
+            case 1:
+                ActiveFragment activeFragment = new ActiveFragment();
+                return activeFragment;
+            case 2:
+                CriticalFragment criticalFragment = new CriticalFragment();
+                return criticalFragment;
+            case 3:
+                LastFragment lastFragment = new LastFragment();
+                return lastFragment;
+            default:
+                return null;
         }
 
-        return null;
+
     }
 
     @Override
