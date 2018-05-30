@@ -61,7 +61,7 @@ public class NewItemFragment extends Fragment{
                 serialStrings[i] = jsonObject.getString("SerialNumber");
                 detailStrings[i] = jsonObject.getString("Detail");
                 sevarityStrings[i] = jsonObject.getString("Severity");
-                assingStrings[i] = jsonObject.getString("Assingnee");
+                assingStrings[i] = jsonObject.getString("Assignee");
                 statusStrings[i] = jsonObject.getString("Status");
                 dueDateStrings[i] = jsonObject.getString("DueDate");
 
