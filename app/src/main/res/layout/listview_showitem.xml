@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="8dp"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--First-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--DocNo-->
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <!--Title-->
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/h1"
+                android:text="DocNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--Value-->
+            <TextView
+                android:id="@+id/txtDocNo"
+                android:textSize="@dimen/h2"
+                android:text="TK61050001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <!--Serial-->
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <!--Title-->
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/h1"
+                android:text="S/N"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--Value-->
+            <TextView
+                android:id="@+id/txtSerial"
+                android:textSize="@dimen/h2"
+                android:text="TK61050001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+        <!--DueDate-->
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <!--Title-->
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/h1"
+                android:text="DueDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--Value-->
+            <TextView
+                android:id="@+id/txtDuedate"
+                android:textSize="@dimen/h2"
+                android:text="TK61050001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--Second-->
+    <LinearLayout
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Title-->
+        <TextView
+            android:textStyle="bold"
+            android:textSize="@dimen/h1"
+            android:text="Detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!--Value-->
+        <TextView
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:id="@+id/txtDetail"
+            android:textSize="@dimen/h2"
+            android:text="TK61050001"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+    <!--Third-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Sevarity-->
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <!--Title-->
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/h1"
+                android:text="Sevarity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--Value-->
+            <TextView
+                android:id="@+id/txtSevarity"
+                android:textSize="@dimen/h2"
+                android:text="TK61050001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <!--Assignee-->
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <!--Title-->
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/h1"
+                android:text="Assignee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--Value-->
+            <TextView
+                android:id="@+id/txtAssignee"
+                android:textSize="@dimen/h2"
+                android:text="TK61050001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+        <!--Status-->
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <!--Title-->
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/h1"
+                android:text="Status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--Value-->
+            <TextView
+                android:id="@+id/txtStatus"
+                android:textSize="@dimen/h2"
+                android:text="TK61050001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

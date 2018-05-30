@@ -7,10 +7,39 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import benjamin.skyict.co.th.ticketservice.R;
+import benjamin.skyict.co.th.ticketservice.utility.MyConstance;
 
 public class NewItemFragment extends Fragment{
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+//        Create ListView
+        createListView();
+
+    }   // Main Method
+
+    private void createListView() {
+        ListView listView = getView().findViewById(R.id.listViewNewItem);
+
+        try {
+
+            MyConstance myConstance = new MyConstance();
+            String urlJSON = myConstance.getUrlNewLtemString();
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+    }
 
     @Nullable
     @Override
