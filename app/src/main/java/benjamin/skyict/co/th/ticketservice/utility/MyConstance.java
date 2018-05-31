@@ -4,6 +4,8 @@ import benjamin.skyict.co.th.ticketservice.R;
 
 public class MyConstance {
 
+    private String urlPostTicketRequest = "https://android.skyict.co.th/addTicketRequest.php";
+
     private String urlAssignString = "https://android.skyict.co.th/getAssign.php";
     private String urlSeverityString = "https://android.skyict.co.th/getSeverity.php";
 
@@ -24,6 +26,10 @@ public class MyConstance {
             R.drawable.ic_action_new_ticket,
             R.drawable.ic_action_report,
             R.drawable.ic_action_about};
+
+    public String getUrlPostTicketRequest() {
+        return urlPostTicketRequest;
+    }
 
     public String getUrlAssignString() {
         return urlAssignString;
