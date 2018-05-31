@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -18,7 +19,7 @@ import benjamin.skyict.co.th.ticketservice.utility.MyConstance;
 import benjamin.skyict.co.th.ticketservice.utility.ReadAllData;
 import benjamin.skyict.co.th.ticketservice.utility.ShowListTicketAdapter;
 
-public class NewItemFragment extends Fragment{
+public class NewItemFragment extends Fragment {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -44,15 +45,15 @@ public class NewItemFragment extends Fragment{
 
             JSONArray jsonArray = new JSONArray(jsonString);
 
-            String[] docNoStrings = new String[jsonArray.length()];
-            String[] serialStrings = new String[jsonArray.length()];
-            String[] detailStrings = new String[jsonArray.length()];
-            String[] sevarityStrings = new String[jsonArray.length()];
-            String[] assingStrings = new String[jsonArray.length()];
-            String[] statusStrings = new String[jsonArray.length()];
-            String[] dueDateStrings = new String[jsonArray.length()];
+            final String[] docNoStrings = new String[jsonArray.length()];
+            final String[] serialStrings = new String[jsonArray.length()];
+            final String[] detailStrings = new String[jsonArray.length()];
+            final String[] sevarityStrings = new String[jsonArray.length()];
+            final String[] assingStrings = new String[jsonArray.length()];
+            final String[] statusStrings = new String[jsonArray.length()];
+            final String[] dueDateStrings = new String[jsonArray.length()];
 
-            for (int i=0; i<jsonArray.length(); i+=1) {
+            for (int i = 0; i < jsonArray.length(); i += 1) {
 
 
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -66,7 +67,6 @@ public class NewItemFragment extends Fragment{
                 dueDateStrings[i] = jsonObject.getString("DueDate");
 
 
-
             }   // for
 
             ShowListTicketAdapter showListTicketAdapter = new ShowListTicketAdapter(getActivity(),
@@ -74,12 +74,34 @@ public class NewItemFragment extends Fragment{
                     statusStrings, dueDateStrings);
             listView.setAdapter(showListTicketAdapter);
 
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                    String[] strings = new String[7];
+                    strings[0] = docNoStrings[position];
+                    strings[1] = serialStrings[position];
+                    strings[2] = detailStrings[position];
+                    strings[3] = sevarityStrings[position];
+                    strings[4] = assingStrings[position];
+                    strings[5] = statusStrings[position];
+                    strings[6] = dueDateStrings[position];
+
+                    getActivity()
+                            .getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.contentServiceFragment,
+                                    DetailFragment.detailInstance(strings))
+                            .commit();
+
+
+                }
+            });
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
 
 
     }

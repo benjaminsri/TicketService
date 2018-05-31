@@ -145,7 +145,7 @@
 
                 <!--Value-->
                 <TextView
-                    android:id="@+id/txtSevarity"
+                    android:id="@+id/txtSeverity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TK61050001"

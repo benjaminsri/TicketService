@@ -57,7 +57,7 @@ public class ShowListTicketAdapter extends BaseAdapter {
         TextView docNoTextView = view.findViewById(R.id.txtDocNo);
         TextView serialTextView = view.findViewById(R.id.txtSerial);
         TextView datailTextView = view.findViewById(R.id.txtDetail);
-        TextView severityTextView = view.findViewById(R.id.txtSevarity);
+        TextView severityTextView = view.findViewById(R.id.txtSeverity);
         TextView assignTextView = view.findViewById(R.id.txtAssignee);
         TextView statusTextView = view.findViewById(R.id.txtStatus);
         TextView dueDateTextView = view.findViewById(R.id.txtDuedate);
